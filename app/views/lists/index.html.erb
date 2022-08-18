@@ -15,7 +15,7 @@
   <div class="row">
     <% @lists.each do |list| %>
       <div class="col-3">
-      <%= link_to list.name, list_path(list), class: "card text-decoration-none" %>
+        <%= link_to list.name, list_path(list), class: "card text-decoration-none" %>
     </div>
     <% end %>
   </div>
