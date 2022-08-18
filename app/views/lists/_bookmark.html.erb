@@ -1,0 +1,29 @@
+  <ul>
+    <li>
+      <% bookmarks.each do |bookmark| %>
+        <% collection = bookmarks.select { |bookmark| bookmark.list_id == list.id } %>
+        <% if collection.empty? %>
+          <p>
+            You haven't added any movie yet!
+          </p>
+          <% break %>
+        <% elsif bookmark.list_id == list.id %>
+          <% movie = Movie.find(bookmark.movie_id) %>
+          <p>
+            Title: <%= movie.title %>
+          </p>
+          <p>
+            Rating: <%= movie.rating %>
+          </p>
+          <p>
+            Overview: <%= movie.overview %>
+          </p>
+          <img src=<%= movie.poster_url %> alt="POster for <%= movie.title%>">
+          <p>
+            Comment: <%= bookmark.comment %>
+          </p>
+          <%= link_to "Delete this bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <% end %>
+      <% end %>
+    </li>
+  </ul>

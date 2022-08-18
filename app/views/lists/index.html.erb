@@ -1,0 +1,25 @@
+<%= render "navbar" %>
+
+<div id="banner">
+  Manage you watch lists
+</div>
+
+<div class="container">
+
+    <h1>Here are your lists</h1>
+
+    <ul>
+        <% @lists.each do |list| %>
+      <li>
+          <%= link_to list.name, list_path(list) %>
+      </li>
+        <% end %>
+    </ul>
+
+    <h3>Add a new list</h3>
+
+    <%= simple_form_for(@list) do |f|%>
+      <%= f.input :name %>
+      <%= f.submit %>
+    <% end %>
+</div>
