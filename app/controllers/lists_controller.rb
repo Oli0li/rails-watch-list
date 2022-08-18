@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.all
+    @lists = List.all.sort_by(&:name)
     @list = List.new
   end
 

@@ -1,20 +1,25 @@
 <%= render "navbar" %>
 
 <div id="banner">
-  Manage you watch lists
+  <div id="banner-text">
+    <h1>Watch List Manager</h1>
+    <p>Never miss a good movie again</p>
+  </div>
 </div>
 
 <div class="container">
 
-    <h1>Here are your lists</h1>
+    <h1>Your lists</h1>
 
-    <ul>
-        <% @lists.each do |list| %>
-      <li>
-          <%= link_to list.name, list_path(list) %>
-      </li>
-        <% end %>
-    </ul>
+<div class="container">
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-3">
+      <%= link_to list.name, list_path(list), class: "card text-decoration-none" %>
+    </div>
+    <% end %>
+  </div>
+</div>
 
     <h3>Add a new list</h3>
 
