@@ -32,18 +32,22 @@
   text-align: center;
 }
 
-.list-card.card {
-  height: 100px;
+.card-category {
+  display: flex;
+  height: 200px;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
-  color: #fff;
   margin-bottom: 10px;
   border-radius: 5px;
 }
 
+.card-category a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
 .container a:hover {
-  background-color: rgb(118, 7, 7);
   color: white;
 }
 
