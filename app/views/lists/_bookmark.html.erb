@@ -1,29 +1,28 @@
-  <ul>
-    <li>
+<div class="container">
+  <div class="row">
       <% bookmarks.each do |bookmark| %>
         <% collection = bookmarks.select { |bookmark| bookmark.list_id == list.id } %>
         <% if collection.empty? %>
-          <p>
-            You haven't added any movie yet!
-          </p>
-          <% break %>
+          <div class="col-12">
+            <p>You haven't added any movie yet!</p>
+            <% break %>
+          </div>
         <% elsif bookmark.list_id == list.id %>
-          <% movie = Movie.find(bookmark.movie_id) %>
-          <p>
-            Title: <%= movie.title %>
-          </p>
-          <p>
-            Rating: <%= movie.rating %>
-          </p>
-          <p>
-            Overview: <%= movie.overview %>
-          </p>
-          <img src=<%= movie.poster_url %> alt="POster for <%= movie.title%>">
-          <p>
-            Comment: <%= bookmark.comment %>
-          </p>
-          <%= link_to "Delete this bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <div class="col-3">
+            <% movie = Movie.find(bookmark.movie_id) %>
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="<%= movie.poster_url %>" alt="Poster for <%= movie.title%>">
+                <div class="card-body">
+                  <h5 class="card-title"><%= movie.title %></h5>
+                  <p class="card-text"><%= movie.rating %></p>
+                  <p class="card-text"><%= movie.overview %></p>
+                  <h5>My comment</h5>
+                  <p class="card-text"><%= bookmark.comment %></p>
+                  <%= link_to "Delete this bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary" %>
+                </div>
+              </div>
+          </div>
         <% end %>
       <% end %>
-    </li>
-  </ul>
+    </div>
+</div>
