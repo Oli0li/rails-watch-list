@@ -11,7 +11,7 @@
 
     <h1>Your lists</h1>
 
-<% if List.all.length > 0 %>
+<% if !List.all.empty? %>
   <div class="container">
     <div class="row">
       <% @lists.each do |list| %>
