@@ -1,7 +1,11 @@
 <div class="container">
   <h1><%= @list.name %></h1>
 
-  <%= render "lists/bookmark_list", bookmarks: @list.bookmarks, list: @list %>
+  <% if @list.bookmarks.empty? %>
+    <p>You haven't added any movie yet!</p>
+  <% else %>
+    <%= render "lists/bookmark_list", bookmarks: @list.bookmarks, list: @list %>
+  <% end %>
 
   <h3>Add a movie to this watch list</h3>
   <%= render "lists/bookmark_form", list: @list, bookmark: @bookmark %>

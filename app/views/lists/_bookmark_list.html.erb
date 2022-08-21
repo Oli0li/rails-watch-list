@@ -1,13 +1,6 @@
 <div class="container">
   <div class="row">
       <% bookmarks.each do |bookmark| %>
-        <% collection = bookmarks.select { |bookmark| bookmark.list_id == list.id } %>
-        <% if collection.empty? %>
-          <div class="col-12">
-            <p>You haven't added any movie yet!</p>
-            <% break %>
-          </div>
-        <% elsif bookmark.list_id == list.id %>
           <div class="col-3">
             <% movie = Movie.find(bookmark.movie_id) %>
               <div class="card" style="width: 18rem;">
@@ -21,8 +14,7 @@
                   <%= link_to "Delete this bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary" %>
                 </div>
               </div>
-          </div>
+            </div>
         <% end %>
-      <% end %>
     </div>
 </div>
