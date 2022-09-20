@@ -22,6 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
----
-permalink: app/views/lists/index.html.erb
----
