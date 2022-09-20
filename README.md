@@ -23,5 +23,5 @@ Things you may want to cover:
 
 * ...
 ---
-permalink: rails-watch-list/app/views/lists/index.html.erb
+permalink: app/views/lists/index.html.erb
 ---
