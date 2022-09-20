@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+---
+permalink: rails-watch-list/app/views/lists/index.html.erb
+---
