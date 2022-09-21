@@ -18,10 +18,10 @@ Movie.destroy_all
 puts "Database destroyed"
 
 movies["results"].each do |movie|
-  if movie["original_language"] == "en"
-    Movie.create(title: movie["original_title"], overview: movie["overview"], poster_url: "https://image.tmdb.org/t/p/w500#{movie["poster_path"]}", rating: movie["vote_average"])
-    puts "movie #{movie["original_title"]} created"
-  end
+  # if movie["original_language"] == "en"
+    Movie.create(title: movie["title"], overview: movie["overview"], poster_url: "https://image.tmdb.org/t/p/w500#{movie["poster_path"]}", rating: movie["vote_average"])
+    puts "movie #{movie["title"]} created"
+  # end
 end
 
 puts "Database created!"
