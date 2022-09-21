@@ -59,3 +59,14 @@
   color:rgb(118, 7, 7);
   margin-bottom: 15px;
 }
+
+.list-form {
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 5px;
+
+  .btn-dark {
+    display: block;
+    margin: 0 auto;
+  }
+}

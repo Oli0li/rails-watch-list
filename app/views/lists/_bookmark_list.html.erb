@@ -3,15 +3,17 @@
       <% bookmarks.each do |bookmark| %>
           <div class="col-3">
             <% movie = Movie.find(bookmark.movie_id) %>
-              <div class="card" style="width: 18rem;">
+              <div class="card">
                 <img class="card-img-top" src="<%= movie.poster_url %>" alt="Poster for <%= movie.title%>">
                 <div class="card-body">
                   <h5 class="card-title"><%= movie.title %></h5>
                   <p class="card-text"><%= movie.rating %></p>
                   <p class="card-text"><%= movie.overview %></p>
-                  <h5>My comment</h5>
-                  <p class="card-text"><%= bookmark.comment %></p>
-                  <%= link_to "Delete this bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary" %>
+                  <div class="comment-container">
+                    <h5>My comment</h5>
+                    <p class="card-text"><%= bookmark.comment %></p>
+                    <%= link_to "Remove from your list", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn" %>
+                  </div>
                 </div>
               </div>
             </div>

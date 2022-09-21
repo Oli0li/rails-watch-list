@@ -29,9 +29,11 @@
 
     <h3>Add a new list</h3>
 
+<div class="container list-form">
     <%= simple_form_for(@list) do |f|%>
       <%= f.input :name %>
       <%= f.input :photo, as: :file %>
-      <%= f.submit %>
+      <%= f.submit "Create a list", class: "btn btn-dark" %>
     <% end %>
+</div>
 </div>
