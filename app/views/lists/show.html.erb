@@ -7,8 +7,13 @@
     <%= render "lists/bookmark_list", bookmarks: @list.bookmarks, list: @list %>
   <% end %>
 
-  <h3>Add a movie to this watch list</h3>
-  <%= render "lists/bookmark_form", list: @list, bookmark: @bookmark %>
+  <div class="form-container">
+    <h3>Add a movie to this watch list</h3>
+    <%= render "lists/bookmark_form", list: @list, bookmark: @bookmark %>
+  </div>
 
-  <%= link_to "Back to my lists", root_path, class: "btn btn-secondary" %>
+  <div class="links">
+    <%= link_to "Back to my lists", root_path, class: "btn btn-secondary" %>
+    <%= link_to "Delete this list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn" %>
+  </div>
 </div>
