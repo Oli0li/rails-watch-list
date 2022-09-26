@@ -11,6 +11,7 @@
 
 .comment-container {
   margin-top: auto;
+
   h5 {
     color: rgb(118, 7, 7);
   }
@@ -18,5 +19,17 @@
   .btn {
     background-color: rgb(118, 7, 7);
     color: white;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.links {
+  padding: 20px;
+  text-align: center;
+
+ .destroy-btn {
+  background-color: rgb(118, 7, 7);
+  color: white;
   }
 }

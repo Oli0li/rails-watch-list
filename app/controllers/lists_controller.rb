@@ -7,13 +7,11 @@ class ListsController < ApplicationController
   end
 
   def show
-    # @list = List.find(params[:id])
     @bookmarks = @list.bookmarks
     @bookmark = Bookmark.new
   end
 
   def create
-    @lists = List.all
     @list = List.new(list_params)
     if @list.save
       redirect_to list_path(@list)
@@ -23,7 +21,6 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    # @list = List.find(params[:id])
     @list.destroy
     redirect_to root_path, status: :see_other
   end
