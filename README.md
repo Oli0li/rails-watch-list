@@ -8,6 +8,6 @@ Users can:
 - remove movies from the watch list
 - delete a watch list
 
-Feel free to have a look at this project here: https://oli0li-watch-list.herokuapp.com/
+Screenshots of this project can be viewed here: https://troopl.com/oliviabonnal/watch-list-manager
 
 Created using HTML, SCSS, Bootstrap, Cloudinary and Ruby on Rails.
